@@ -25,6 +25,7 @@ class PostListView(ListView):
 class PostCreateView(CreateView):
     model = Post
     form_class = PostForm
+    template_name = 'blog/post_form.html'
     success_url = reverse_lazy('blog:list')
 
 class PostDetailView(DetailView):

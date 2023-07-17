@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <p class="main-title">블로그 게시판의 첫 화면</p>
+  {% if posts %}
+    <table class="table">
+        <thead class="table-light">
+            <tr>
+                <td>제목</td>
+                <td>작성자</td>
+                <td>작성일자</td>
+            </tr>
+        </thead>
+        <tbody>
+            {% for post in posts %}
+              <tr>
+                <td><a href="{% url 'blog:detail' pk=post.pk %}" class="btn">{{ post.title }}</a></td>
+                <td>{{ post.writer }}</td>
+                <td>{{ post.update_at }}</td>
+              </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+  {% else %}
+  {% endif %}
+  <form action="{% url 'blog:write' %}" method="get">
+    <input type="hidden" name="'{{ redirect_field_name }}" value="{{ request.GET.next }}">
+    <input type="submit" value="글 작성">
+  </form>
+{% endblock content %}

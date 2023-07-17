@@ -8,6 +8,7 @@ User = get_user_model()
 class Post(models.Model):
     title = models.CharField(max_length=30)
     content = models.TextField()
+    category = models.CharField(max_length=30,default='')
     writer = models.ForeignKey(User, on_delete=models.CASCADE)
     create_at = models.DateTimeField(auto_now_add=True)
     update_at = models.DateTimeField(auto_now=True)
