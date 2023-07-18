@@ -3,6 +3,9 @@
 {% block content %}
   <h1>Index Page</h1>
   <h2>{% trans "HelloWorld" %}</h2>
-  <a href="{% url 'blog:list' %}">입장하기</a>
-  <a href="{% url 'user:login' %}">입장하기</a>
+  <a href="{% url 'blog:list' %}">게시판</a>
+  {% comment %}
+  <a href="{% url 'user:login' %}">로그인</a>
+    
+  {% endcomment %}
 {% endblock content %}
