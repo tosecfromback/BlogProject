@@ -11,11 +11,11 @@ urlpatterns = [
     # 글 작성
     path("write/", views.PostCreateView.as_view(), name='write'),
     # 글 수정
-    path("detail/<int:pk>/edit", views.PostDetailView.as_view(), name='edit'),
+    path("delete/<int:pk>/edit/", views.PostUpdateView.as_view(), name='edit'),
     # 글 삭제
-    path("detail/<int:pk>/delete", views.PostDeleteView.as_view(), name='delete'),
+    path("delete/<int:pk>/delete/", views.PostDeleteView.as_view(), name='delete'),
     # 글 검색
-    path("detail/search/<str:tag>", views.Index.as_view(), name='list_srch'),
+    path("search/<str:tag>/", views.Index.as_view(), name='list_srch'),
     # 코멘트 작성
     # path("detail/<int:pk>/", views.PostDetailView.as_view(), name='detail'),
     # 코멘트 삭제

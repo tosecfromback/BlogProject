@@ -1,9 +1,10 @@
 {% extends "base.html" %}
 
 {% block content %}
-<form action="{% url 'blog:write' %}" method="post" id="textbox">
+<h3>수정을 해봅시다</h3>
+<form action="{% url 'blog:edit' pk=post.pk %}" method="post">
     {% csrf_token %}
     {{ form.as_p }}
-    <input type="submit" class="btn btn-outline-success">
+    <input type="submit" value="수정">
 </form>
 {% endblock content %}
