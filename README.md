@@ -8,6 +8,10 @@
 - 23.07.18 PM 16:09 Blog의 권한 설정 없는 상태에서 Update(edit), Delete 기능 구현, auth_view를 바탕으로 한 Login, Logout 구현
 
 
+## 모델
+<img src=src/img/MiniBoard.png>
+
+
 ## 이슈
 - 23.07.18 AM 09:00 가상환경이 정상적으로 실행되지 않아 프로젝트를 처음부터 다시 구성
   - AM 10:50 기존 blog 기능 구현 및 정상 동작 확인
