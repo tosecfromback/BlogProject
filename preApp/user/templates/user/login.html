@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  로그인
+{% endblock title %}
+
+{% block content %}
+{% comment %}
+  
+<h2>로그인 페이지</h2>
+<form action="{% url 'user:login' %}" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="로그인">
+</form>
+{% endcomment %}
+
+<div class="row">
+    <div class="col-md2"></div>
+    <div class="col-md-8 panel panel-default">
+        <div class="alert alert-info">Please enter your login informations.</div>
+    </div>
+    <form action="" method="post">
+        {{ form.as_p }}
+        {% csrf_token %}
+        <input type="submit" value="login" class="btn btn-primary">
+    </form>
+    <div class="col-md-2"></div>
+</div>
+
+
+{% endblock %}

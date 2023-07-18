@@ -1,7 +1,8 @@
 from django.contrib import admin
-from .models import Post, Comment, HashTag
+from .models import Post, Comment, HashTag, Category
 
 # Register your models here.
 admin.site.register(Post)
 admin.site.register(Comment)
 admin.site.register(HashTag)
+admin.site.register(Category)

@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}
+  Logdout
+{% endblock title %}
+
+{% block content %}
+  <div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8 panel panel-default">
+        <div class="alert alert-info">You have benn successfully logged out.</div>
+        <a href="{% url 'user:login' %}" class="btn btn-primary">Click ot Login</a>
+    </div>
+    <div class="col-md-2"></div>
+  </div>
+{% endblock content %}

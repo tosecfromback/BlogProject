@@ -1,11 +1,11 @@
 from django import forms
-from .models import Post, Comment, HashTag
+from .models import Post, Comment, HashTag, Category
 
 class PostForm(forms.ModelForm):
     
     class Meta:
         model = Post
-        fields = [ 'title', 'content', 'writer' ]
+        fields = [ 'title', 'content', 'category','writer' ]
 
 class CommentForm(forms.ModelForm):
     
@@ -20,4 +20,10 @@ class HashTagForm(forms.ModelForm):
     
     class Meta:
         model = HashTag
+        fields = [ 'name' ]
+
+class Category(forms.ModelForm):
+
+    class Meta:
+        model = Category
         fields = [ 'name' ]

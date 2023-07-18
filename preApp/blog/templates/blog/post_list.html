@@ -28,4 +28,7 @@
     <input type="hidden" name="'{{ redirect_field_name }}" value="{{ request.GET.next }}">
     <input type="submit" value="글 작성">
   </form>
+  <form action="{% url 'user:logout' %}" method="post">
+    <input type="submit" value="로그아웃">
+  </form>
 {% endblock content %}
