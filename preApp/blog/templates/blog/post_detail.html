@@ -23,6 +23,21 @@
     <p>{% trans 'Writer:' %} {{ post.writer }}</p>
     <p>{% trans 'Date:' %} {{ post.update_at }}</p>
 
+    <br><br>
+    여기 아래는 댓글
+    {% if comments %}
+      <p>댓글객체를 가져오는데 성공</p>
+    {% else %}
+      <p>현재 댓글이 달려있지 않습니다.</p>
+    {% endif %}
     <a href="url 'blog:cm-write' pk=post.id" class="btn">댓글 추가</a>
+
+    <br><br>
+    여기 아래는 태그
+    {% if hashtags %}
+    <p>태그객체를 가져오는데 성공</p>
+    {% else %}
+      <p>현재 태그가 달려있지 않습니다.</p>
+    {% endif %}
     <a href="url 'blog:tag-write' pk=post.id" class="btn">태그 추가</a>
 {% endblock content %}

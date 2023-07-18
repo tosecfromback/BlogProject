@@ -15,6 +15,7 @@
   - AM 11:24 Error의 원인을 확인하던 중 staff권한이 False로 된 것을 수정 후 models.py에서 createsuperuser의 param을 확인 후 수정
 - 23.07.18 PM 15:16 Auth_view를 바탕으로 한 로그인&로그아웃을 구현하는 중 로그인의 경우 redirect되는 곳을 변경해야하고, 로그인 여부를 확인하여 로그아웃을 가능하게 해야하는데 로그아웃의 기능 구현이 미흡함. 로그아웃 버튼 클릭 시 403에러 발생(CSRF Token missing)
   - PM 15:24 Logout시 Redirect 위치 지정으로 해결
+- 23.07.18 PM 16:56 Comment와 HashTag를 통한 역참조가 안 되는지 detail.html에서 현재 댓글과 태그가 정상적으로 출력되지 않음. admin과 SqlViewer를 통한 저장상태는 확인됨
 
 ## 진행상황
 - blog 기능 구현 : blog/post의 list, detail, delete, update(edit,권한확인없이), 카테고리 등록, 

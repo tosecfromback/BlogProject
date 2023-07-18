@@ -9,7 +9,7 @@ class Post(models.Model):
     title = models.CharField(max_length=30)
     content = models.TextField()
     category = models.ForeignKey('Category', on_delete=models.SET_DEFAULT, default=1)
-    writer = models.ForeignKey(User, on_delete=models.CASCADE, default="1")
+    writer = models.ForeignKey(User, on_delete=models.CASCADE)
     create_at = models.DateTimeField(auto_now_add=True)
     update_at = models.DateTimeField(auto_now=True)
     
@@ -19,7 +19,7 @@ class Post(models.Model):
 class Comment(models.Model):
     post = models.ForeignKey('Post', on_delete=models.CASCADE)
     content = models.TextField()
-    writer = models.ForeignKey(User, on_delete=models.CASCADE, default="1")
+    writer = models.ForeignKey(User, on_delete=models.CASCADE)
     create_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
@@ -29,7 +29,8 @@ class Comment(models.Model):
 class HashTag(models.Model):
     post = models.ForeignKey('Post', on_delete=models.CASCADE)
     name = models.CharField(max_length=10)
-    writer = models.ForeignKey(User, on_delete=models.CASCADE, default="1")
+    writer = models.ForeignKey(User, on_delete=models.CASCADE)
+    create_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.name

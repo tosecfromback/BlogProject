@@ -30,6 +30,8 @@ class PostCreateView(CreateView):
 
 class PostDetailView(DetailView):
     model = Post
+    comments = Comment.objects.all()
+    hashtags = HashTag.objects.all()
     context_object_name = 'post'
 
 
