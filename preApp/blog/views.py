@@ -1,3 +1,4 @@
+from typing import Any, Dict
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.views import View
@@ -30,9 +31,13 @@ class PostCreateView(CreateView):
 
 class PostDetailView(DetailView):
     model = Post
-    comments = Comment.objects.all()
-    hashtags = HashTag.objects.all()
     context_object_name = 'post'
+
+    def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
+        context = super().get_context_data(**kwargs)
+        context['comments'] = Comment.objects.all()
+        context['hashtags'] = HashTag.objects.all()
+        return context
 
 
 class PostUpdateView(UpdateView):

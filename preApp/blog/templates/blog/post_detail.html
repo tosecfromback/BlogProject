@@ -26,7 +26,11 @@
     <br><br>
     여기 아래는 댓글
     {% if comments %}
-      <p>댓글객체를 가져오는데 성공</p>
+      <ul>
+        {% for comment in comments %}
+            <li>{{ comment.content }} </li>
+      {% endfor %}
+      </ul>
     {% else %}
       <p>현재 댓글이 달려있지 않습니다.</p>
     {% endif %}
@@ -35,7 +39,13 @@
     <br><br>
     여기 아래는 태그
     {% if hashtags %}
-    <p>태그객체를 가져오는데 성공</p>
+      <ul>
+        {% for hashtag in hashtags %}
+          {% if hashtag.post_id == post.id %}
+            <li>{{ hashtag.name }} </li>
+          {% endif %}
+      {% endfor %}
+      </ul>
     {% else %}
       <p>현재 태그가 달려있지 않습니다.</p>
     {% endif %}
